@@ -10,7 +10,7 @@ require (
 require (
 	github.com/go-playground/locales v0.14.1 // indirect
 	github.com/go-playground/universal-translator v0.18.1 // indirect
-	github.com/jaswdr/faker/v2 v2.3.0 // indirect
+	github.com/jaswdr/faker/v2 v2.3.0
 	github.com/leodido/go-urn v1.4.0 // indirect
 	github.com/stretchr/objx v0.5.2 // indirect
 	gopkg.in/go-playground/assert.v1 v1.2.1 // indirect
