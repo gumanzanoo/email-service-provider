@@ -1,0 +1,41 @@
+(0x0,0x0)
+
+ panic: runtime error: invalid memory address or nil pointer dereference
+ 
+ -> github.com/gumanzanoo/email-service-provider/internal/domain/campaign.(*Service).Create
+ ->   /home/mzndesk/work/email-service-provider/internal/domain/campaign/service.go:18
+
+    main.main.func1
+      /home/mzndesk/work/email-service-provider/cmd/api/main.go:27
+    net/http.HandlerFunc.ServeHTTP
+      /usr/local/go/src/net/http/server.go:2166
+    github.com/go-chi/chi/v5.(*Mux).routeHTTP
+      /home/mzndesk/go/pkg/mod/github.com/go-chi/chi/v5@v5.0.12/mux.go:459
+    net/http.HandlerFunc.ServeHTTP
+      /usr/local/go/src/net/http/server.go:2166
+    github.com/go-chi/chi/v5/middleware.Recoverer.func1
+      /home/mzndesk/go/pkg/mod/github.com/go-chi/chi/v5@v5.0.12/middleware/recoverer.go:45
+    net/http.HandlerFunc.ServeHTTP
+      /usr/local/go/src/net/http/server.go:2166
+    github.com/go-chi/chi/v5/middleware.init.0.RequestLogger.func1.1
+      /home/mzndesk/go/pkg/mod/github.com/go-chi/chi/v5@v5.0.12/middleware/logger.go:55
+    net/http.HandlerFunc.ServeHTTP
+      /usr/local/go/src/net/http/server.go:2166
+    github.com/go-chi/chi/v5/middleware.RealIP.func1
+      /home/mzndesk/go/pkg/mod/github.com/go-chi/chi/v5@v5.0.12/middleware/realip.go:36
+    net/http.HandlerFunc.ServeHTTP
+      /usr/local/go/src/net/http/server.go:2166
+    github.com/go-chi/chi/v5/middleware.RequestID.func1
+      /home/mzndesk/go/pkg/mod/github.com/go-chi/chi/v5@v5.0.12/middleware/request_id.go:76
+    net/http.HandlerFunc.ServeHTTP
+      /usr/local/go/src/net/http/server.go:2166
+    github.com/go-chi/chi/v5.(*Mux).ServeHTTP
+      /home/mzndesk/go/pkg/mod/github.com/go-chi/chi/v5@v5.0.12/mux.go:90
+    net/http.serverHandler.ServeHTTP
+      /usr/local/go/src/net/http/server.go:3137
+    net/http.(*conn).serve
+      /usr/local/go/src/net/http/server.go:2039
+    created by net/http.(*Server).Serve in goroutine 1
+      /usr/local/go/src/net/http/server.go:3285
+    
+2024/06/14 16:46:33 [mzndesk/zStuLHFVVO-000001] "POST http://localhost:3000/campaign HTTP/1.1" from 127.0.0.1:59598 - 500 0B in 476.821µs

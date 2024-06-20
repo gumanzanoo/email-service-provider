@@ -17,7 +17,8 @@ func ValidateStruct(obj interface{}) error {
 		return nil
 	}
 
-	validationErrors := err.(validator.ValidationErrors)
+	var validationErrors validator.ValidationErrors
+	errors.As(err, &validationErrors)
 	validationError := validationErrors[0]
 
 	sf := strings.ToLower(validationError.StructField())

@@ -19,6 +19,11 @@ func (r *repositoryMock) Save(campaign *Campaign) error {
 	return args.Error(0)
 }
 
+func (r *repositoryMock) Get() []Campaign {
+	//args := r.Called(campaign)
+	return nil
+}
+
 var (
 	newCampaign = contract.NewCampaign{
 		Name:    "Teste Y",
@@ -29,22 +34,22 @@ var (
 )
 
 func Test_Create_Campaign(t *testing.T) {
-	assert := assert.New(t)
+	asrt := assert.New(t)
 	repositoryMock := new(repositoryMock)
 	repositoryMock.On("Save", mock.Anything).Return(nil)
 	service.Repository = repositoryMock
 	id, err := service.Create(newCampaign)
-	assert.NotNil(id)
-	assert.Nil(err)
+	asrt.NotNil(id)
+	asrt.Nil(err)
 	repositoryMock.AssertExpectations(t)
 }
 
 func Test_Save_Campaign(t *testing.T) {
-	assert := assert.New(t)
+	asrt := assert.New(t)
 	repositoryMock := new(repositoryMock)
 	repositoryMock.On("Save", mock.Anything).Return(errors.New("error while save into database"))
 	service.Repository = repositoryMock
 	_, err := service.Create(newCampaign)
-	assert.True(errors.Is(exceptions.InternalErr, err))
+	asrt.True(errors.Is(exceptions.InternalErr, err))
 	repositoryMock.AssertExpectations(t)
 }

@@ -3,9 +3,13 @@ module github.com/gumanzanoo/email-service-provider
 go 1.22.3
 
 require (
+	github.com/go-chi/chi/v5 v5.0.12
+	github.com/go-chi/render v1.0.3
 	github.com/go-playground/validator v9.31.0+incompatible
 	github.com/stretchr/testify v1.9.0
 )
+
+require github.com/ajg/form v1.5.1 // indirect
 
 require (
 	github.com/go-playground/locales v0.14.1 // indirect
